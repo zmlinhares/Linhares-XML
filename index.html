@@ -143,8 +143,8 @@ function danfe(doc,d){
    y+=h;doc.setLineWidth(.15);doc.setLineDashPattern([.7,.7],0);doc.line(X,y,X+U,y);doc.setLineDashPattern([],0);fst=0}});
  bl();
  if(x1.length||x2.length){doc.addPage('a4',Ld?'l':'p');wm();y=Ld?8:6;head();ttl('DADOS ADICIONAIS');da(y,Math.min(PH-12-y,Math.max(x1.length,x2.length)*2.6+4.5),x1,x2)}
- const n=doc.getNumberOfPages()-p0+1,dp=new Date(),pr='Impresso em '+dp.toLocaleDateString('pt-BR')+' as '+dp.toLocaleTimeString('pt-BR');
- for(let q=0;q<n;q++){doc.setPage(p0+q);doc.setFont('times','italic');doc.setFontSize(7);doc.text('Folha '+(q+1)+'/'+n,fp0[q][0],fp0[q][1],{align:'center'});doc.setFontSize(5.5);doc.text(pr,X,PH-6);doc.text('Gerado por Linhares Inteligência Contábil',X+U,PH-6,{align:'right'})}
+ const n=doc.getNumberOfPages()-p0+1;
+ for(let q=0;q<n;q++){doc.setPage(p0+q);doc.setFont('times','italic');doc.setFontSize(7);doc.text('Folha '+(q+1)+'/'+n,fp0[q][0],fp0[q][1],{align:'center'});}
  doc.setPage(p0+n-1)}
 function cupom(doc,d){const L=3,Rr=77,C=40;let y=5;
  const ln=(s,o={})=>{doc.setFont('courier',o.b?'bold':'normal');doc.setFontSize(7);wr(doc,s,74).forEach(t=>{doc.text(t,o.c?C:L,y,{align:o.c?'center':'left'});y+=3.1})},
